@@ -1,0 +1,22 @@
+{{template "base" .}}
+
+{{define "content"}}
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <h1>This is the about page</h1>
+
+                <!-- Using 'index' function, looking something up that has indices - looking for StringMap - the '.' refers to all data passed to template "test"
+                tells it we want the particular value from key 'test'
+                -->
+                <p>Message from TemplateData: {{index .StringMap "test"}}</p>
+                <p>{{if ne (index .StringMap "remoteIp") ""}}
+                    Your remote IP address is {{index .StringMap "remoteIp"}}
+                {{else}}
+                Unsure of IP - visit homepage to set
+                {{end}}
+            </p>
+            </div>
+        </div>
+    </div>
+{{end}}
