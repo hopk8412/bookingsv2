@@ -18,6 +18,13 @@ func routes(app *config.AppConfig) http.Handler {
 
 	mux.Get("/", http.HandlerFunc(handlers.Repo.Home))
 	mux.Get("/about", http.HandlerFunc(handlers.Repo.About))
+	mux.Get("/contact", http.HandlerFunc(handlers.Repo.Contact))
+	mux.Get("/generals-quarters", http.HandlerFunc(handlers.Repo.Generals))
+	mux.Get("/majors-suite", http.HandlerFunc(handlers.Repo.Majors))
+	mux.Get("/make-reservation", http.HandlerFunc(handlers.Repo.Reservation))
+	mux.Get("/search-availability", http.HandlerFunc(handlers.Repo.Availability))
+
+	mux.Post("/search-availability", http.HandlerFunc(handlers.Repo.PostAvailability))
 
 	//serve static files
 	fileServer := http.FileServer(http.Dir("./static/"))

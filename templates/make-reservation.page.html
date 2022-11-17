@@ -1,0 +1,36 @@
+{{template "base" .}}
+
+{{define "content"}}
+<div class="row">
+    <div class="col">
+        <img src="/static/images/marjors-suite.png" alt="room" class="img-fluid img-thumbnail mx-auto d-block room-img">
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Make Reservation</h1>
+      <form action="" method="POST" class="needs-validation" novalidate>
+              <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input required type="text" class="form-control" id="firstName" name="firstName" autocomplete="off">
+              </div>
+              <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input required type="text" class="form-control" id="lastName" name="lastName" autocomplete="off">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input required type="email" class="form-control" id="email" name="email" autocomplete="off">
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input required type="text" class="form-control" id="phone" name="phone" autocomplete="off">
+              </div>
+          <button type="submit" class="btn btn-primary text">Submit</button>
+      </form>
+    </div>
+  </div>
+
+{{end}}
